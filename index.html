@@ -438,24 +438,17 @@ ul{margin:0;padding:0;list-style:none;}
   border-color:rgba(239,161,60,.55);
 }
 
-/* Фото блюда (вместо эмодзи) */
-.dish-image{
-  position:relative;
-  width:100%;
-  aspect-ratio:4 / 3;
-  border-radius:var(--radius-sm);
-  overflow:hidden;
+.dish-emoji{
+  width:66px;height:66px;
+  display:grid;
+  place-items:center;
+  font-size:2rem;
+  border-radius:18px;
   background:linear-gradient(140deg, #FFE6B8, #F5C173);
   box-shadow:inset 0 -3px 10px rgba(196,85,47,.20);
+  transition:transform var(--transition);
 }
-.dish-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform .4s ease;
-}
-.dish:hover .dish-image img{transform:scale(1.06);}
+.dish:hover .dish-emoji{transform:rotate(-7deg) scale(1.07);}
 
 .dish h3{
   font-size:1.13rem;
@@ -781,11 +774,9 @@ ul{margin:0;padding:0;list-style:none;}
 
   .contact-item{padding:1rem;}
   .contact-icon{width:42px;height:42px;font-size:1.15rem;}
-
-  .dish-image{aspect-ratio:16 / 10;}
 }
 
-/* --- 600px+ : контакты в две колонки --- */
+/* --- 600px+ : меню и отзывы в две колонки --- */
 @media (min-width:600px){
   .contact-list{grid-template-columns:repeat(2, 1fr);}
 }
@@ -922,10 +913,7 @@ ul{margin:0;padding:0;list-style:none;}
       <div class="menu-grid">
 
         <article class="dish">
-          <div class="dish-image">
-            <img src="https://images.pexels.com/photos/33929308/pexels-photo-33929308.jpeg"
-                 alt="Вок с лапшой соба «Усы тысячелетней панды»" loading="lazy">
-          </div>
+          <div class="dish-emoji" aria-hidden="true">🐼</div>
           <h3>Усы тысячелетней панды</h3>
           <p class="dish-desc">Вок с лапшой соба, хрустящие овощи, кунжут и густой соус из чёрных бобов.</p>
           <div class="dish-foot">
@@ -935,10 +923,7 @@ ul{margin:0;padding:0;list-style:none;}
         </article>
 
         <article class="dish">
-          <div class="dish-image">
-            <img src="https://images.pexels.com/photos/28701170/pexels-photo-28701170.jpeg"
-                 alt="Рамен «Бульон просветлённого шифу» с чашу и яйцом аджитама" loading="lazy">
-          </div>
+          <div class="dish-emoji" aria-hidden="true">🍜</div>
           <h3>Бульон просветлённого шифу</h3>
           <p class="dish-desc">Рамен на двенадцатичасовом курином бульоне, свинина чашу и маринованное яйцо аджитама.</p>
           <div class="dish-foot">
@@ -948,10 +933,7 @@ ul{margin:0;padding:0;list-style:none;}
         </article>
 
         <article class="dish">
-          <div class="dish-image">
-            <img src="https://images.pexels.com/photos/27039853/pexels-photo-27039853.jpeg"
-                 alt="Удон «Дракон, чихнувший перцем» с говядиной в остром соусе" loading="lazy">
-          </div>
+          <div class="dish-emoji" aria-hidden="true">🌶️</div>
           <h3>Дракон, чихнувший перцем</h3>
           <p class="dish-desc">Удон в остром соусе сычуань, томлёная говядина, жареный чеснок и щепотка перца ма-ла.</p>
           <div class="dish-foot">
@@ -961,10 +943,7 @@ ul{margin:0;padding:0;list-style:none;}
         </article>
 
         <article class="dish">
-          <div class="dish-image">
-            <img src="https://images.pexels.com/photos/20844833/pexels-photo-20844833.jpeg"
-                 alt="Рисовая лапша «Шёлковый путь на тарелке» с креветками и лаймом" loading="lazy">
-          </div>
+          <div class="dish-emoji" aria-hidden="true">🥢</div>
           <h3>Шёлковый путь на тарелке</h3>
           <p class="dish-desc">Рисовая лапша, тигровые креветки, лемонграсс, лайм и обжаренный арахис.</p>
           <div class="dish-foot">
@@ -974,10 +953,7 @@ ul{margin:0;padding:0;list-style:none;}
         </article>
 
         <article class="dish">
-          <div class="dish-image">
-            <img src="https://images.pexels.com/photos/11829700/pexels-photo-11829700.jpeg"
-                 alt="Лапша «Тайная тропа шифу» с уткой и грибами шиитаке" loading="lazy">
-          </div>
+          <div class="dish-emoji" aria-hidden="true">🍥</div>
           <h3>Тайная тропа шифу</h3>
           <p class="dish-desc">Тянутая лапша ручной работы, тушёная утка, грибы шиитаке и тёмный соус на бульоне.</p>
           <div class="dish-foot">
@@ -987,10 +963,7 @@ ul{margin:0;padding:0;list-style:none;}
         </article>
 
         <article class="dish">
-          <div class="dish-image">
-            <img src="https://images.pexels.com/photos/15781260/pexels-photo-15781260.jpeg"
-                 alt="Фунчоза «Шёпот бамбуковой рощи» с баклажаном и зеленью" loading="lazy">
-          </div>
+          <div class="dish-emoji" aria-hidden="true">🌿</div>
           <h3>Шёпот бамбуковой рощи</h3>
           <p class="dish-desc">Фунчоза, баклажан в терияки, зелёный лук, кинза и кунжутное масло. Полностью растительное.</p>
           <div class="dish-foot">
@@ -1164,4 +1137,4 @@ ul{margin:0;padding:0;list-style:none;}
 </footer>
 
 </body>
-</html>                
+</html>
